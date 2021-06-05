@@ -1,7 +1,8 @@
 /**
- * Routine.js
+ * PersonalTrainer.js
  *
- * A routine belgons to a Plan representing each day of the User's plan activities.
+ * A personal trainer which can have multiple users and associate plans to them
+ * 
  * 
  * SailsJS already has by deafult created_at and updated_at
  */
@@ -14,9 +15,33 @@
       //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
       //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-      name: {
+      dni: {
           type: 'number',
-          description: 'Name of the routine, this is intended to be filled with the day of the week',
+          description: 'Personal Trainer DNI',
+      },
+      name: {
+          type: 'string',
+          description: 'Personal Trainer name'
+      },
+      surname: {
+          type: 'string',
+          description: 'Personal Trainer surname'
+      },
+      age: {
+          type: 'number',
+          description: 'Personal Trainer age'
+      },
+      phone: {
+          type: 'string',
+          description: 'Personal Trainer contact number'
+      },
+      email: {
+          type: 'string',
+          description: 'Personal Trainer email address'
+      },
+      password: {
+          type: 'string',
+          description: 'Personal Trainer password to access webapp'
       },
   
       //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
@@ -27,13 +52,10 @@
       //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
       //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
       //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-      exercises: {
-          collection: 'exercise',
-          via: 'routines'
+      users: {
+          collection: 'user',
+          via: 'personalTrainer'
       },
-      plan: {
-        collection: 'plan',
-      }
   
     },
   

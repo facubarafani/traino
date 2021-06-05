@@ -14,17 +14,21 @@
       //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
       //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-      name: {
-          type: 'string',
-          description: 'Name of the exercise',
+      cost: {
+          type: 'number',
+          description: 'Price of membership',
       },
-      description: {
+      initialDate: {
           type: 'string',
-          description: 'Description of the exercise'
+          description: 'Initial membership date'
       },
-      image: {
+      duration: {
+          type: 'number',
+          description: 'Membership duration'
+      },
+      fechaVencimiento: {
           type: 'string',
-          description: 'Image that represents the exercise'
+          description: 'Expiracy membership date'
       },
   
       //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
@@ -35,9 +39,8 @@
       //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
       //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
       //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-      routines: {
-          collection: 'routine',
-          via: 'exercises'
+      user: {
+        model: 'user'
       }
   
     },
