@@ -1,0 +1,29 @@
+<div id="personaltrainer-login" v-cloak>
+  <div class="container-fluid pt-5 pb-5">
+    <h1 class="text-center">Personal Trainer - Iniciar sesión</h1>
+    <div style="max-width: 450px;" class="mx-auto">
+      <hr/>
+      <ajax-form action="login" :.sync="syncing" :cloud-error.sync="cloudError" :form-data="formData" :form-rules="formRules" :form-errors.sync="formErrors" @submitted="submittedForm()">
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Correo electrónico" :class="[formErrors.emailAddress ? 'is-invalid' : '']" v-model.trim="formData.emailAddress" autocomplete="email" focus-first>
+          <div class="invalid-feedback" v-if="formErrors.emailAddress">Ingresá tu correo electrónico a continuación porfavor.</div>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Contraseña" :class="[formErrors.password ? 'is-invalid' : '']" v-model.trim="formData.password" autocomplete="current-password">
+          <div class="invalid-feedback" v-if="formErrors.password">Ingresá tu contraseña a continuación.</div>
+        </div>
+        <div class="form-group form-check">
+          <input class="form-check-input" type="checkbox" id="remember" name="rememberMe" v-model="formData.rememberMe"/>
+          <label class="form-check-label" for="remember">Recordarme</label>
+        </div>
+        <cloud-error v-if="cloudError==='badCombo'">Las credenciales ingresadas no estan vinculadas con ningun usuario. Porfavor verificá tu email y/o contraseña y pruebe de nuevo.</cloud-error>
+        <cloud-error v-else-if="cloudError"></cloud-error>
+        <div class="form-group">
+          <ajax-button :syncing="syncing" class="btn-dark btn-lg btn-block">Iniciar sesión</ajax-button>
+        </div>
+      </ajax-form>
+      <p class="text-center"><a href="/password/forgot">Olvidaste tu contraseña?</a></p>
+    </div>
+  </div>
+</div>
+<%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>
