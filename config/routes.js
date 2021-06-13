@@ -27,6 +27,9 @@ module.exports.routes = {
   '/logout': 'UserController.logout',
   '/logoutpersonaltrainer': 'PersonalTrainerController.logout',
 
+  'GET /user/register': {view: 'pages/user/register'},
+  'POST /user/register': 'UserController.register'
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

@@ -55,6 +55,26 @@ email status until they click the link in the confirmation email.`
       maxLength: 120,
       example: 'Mary Sue van der McHenst'
     },
+    dni: {
+      type: 'number',
+      required: true,
+    },
+    height: {
+      type: 'number',
+      required: true,
+    },
+    weight: {
+      type: 'number',
+      required: true,
+    },
+    birthDate: {
+      type: 'string',
+      required: true,
+    },
+    contactPhone: {
+      type: 'number',
+      required: true,
+    },
     passwordResetToken: {
       type: 'string',
       description: 'A unique token used to verify the user\'s identity when recovering a password.  Expires after 1 use, or after a set amount of time has elapsed.'
@@ -100,6 +120,9 @@ email status until they click the link in the confirmation email.`
     // n/a
     personalTrainer: {
       model: 'personalTrainer'
+    },
+    membership: {
+      model: 'membership'
     }
   },
 
