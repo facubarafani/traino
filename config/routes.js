@@ -20,7 +20,12 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-
+  'GET /loginP': {view: 'pages/loginP'},
+  'POST /loginP': 'UserController.login',
+  'GET /loginpersonaltrainerP': {view: 'pages/loginpersonaltrainerP'},
+  'POST /loginpersonaltrainerP': 'PersonalTrainerController.login',
+  '/logout': 'UserController.logout',
+  '/logoutpersonaltrainer': 'PersonalTrainerController.logout',
 
   /***************************************************************************
   *                                                                          *
