@@ -1,0 +1,36 @@
+<div class="row">
+  <form action="" method="post">
+      <div class="col s2"></div>
+      <div class="input-field col s8">
+        <div class ="row">
+          <div class="col s6">
+          <input placeholder="Nombre" name="name" type="text" class="validate">
+        </div>
+        <div class="col s6">
+          <input placeholder="Apellido" name="last_name" type="text" class="validate">
+        </div>
+        </div>
+        <input placeholder="DNI" name="dni" type="number" class="validate">
+          <input placeholder="E-mail" name="email" type="text" class="validate">
+          <input type="text" name="birth_date" class="datepicker">
+          <input placeholder="Telefono" name="contact_phone" type="number" class="validate">
+          <input placeholder="Contraseña" name="password" type="password" class="validate">
+          <input placeholder="Validar Contraseña" name="confirm_password" type="password" class="validate">
+          <div class="row">
+              <div class="col s10">
+              </div>
+          <button class="btn waves-effect waves-light" type="submit">
+              Registrarse
+              <i class="material-icons right">send</i>
+            </button>
+            <div class="row">
+        </div>
+        <div class="col s2"></div>
+  </form>
+  </div>
+
+<script>
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+</script>

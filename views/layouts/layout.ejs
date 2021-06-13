@@ -2,18 +2,27 @@
 <html>
 
   <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">traino</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    </div>
+    <% if(req.session.user || req.session.personaltrainer){ %>
+      <% if(req.session.user){ %>
+        <%= req.session.user.fullName%>
+        <a href="/logout">logout</a>
+        <% }else{ %>
+        <%= req.session.personaltrainer.name%>
+        <a href="/logoutpersonaltrainer">logout</a>
+        <%}%>
+    <% }else{ %>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">traino</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/loginP">Iniciar Sesión</a></li>
+          <li><a href="/user/register">Registrarse</a></li>
+        </ul>
+      </div>
+    <% } %>
   </nav>
 
 <head>
-  <title>New Sails App</title>
+  <title>traino</title>
 
   <!-- Viewport mobile tag for sensible mobile support -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -104,6 +113,7 @@
 
     <!--SCRIPTS-->
     <script src="/dependencies/sails.io.js"></script>
+    <script src="/js/pages/personaltrainer/register.page.js"></script>
     <script src="/js/pages/user/register.page.js"></script>
     <!--SCRIPTS END-->
 </body>
