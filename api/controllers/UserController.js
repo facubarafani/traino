@@ -34,8 +34,6 @@ module.exports = {
     const contactPhone = req.param('contact_phone');
     const password = req.param('password');
 
-    console.log(email);
-    // var createdUser = await User.create({fullName: "hola", emailAddress: "prueba@hola.com", dni: 1234, password: "pepe1234", height: 12, weight: 23, birthDate: "dafasfsaf", contactPhone: 41242144}).fetch()
     var createdUser = await User.create({fullName: `${lastName} ${name}`, emailAddress: email, dni: dni, password: password, height: height, weight: weight, birthDate: birthDate, contactPhone: contactPhone}).fetch()
 
 if (createdUser) {
