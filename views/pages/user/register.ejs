@@ -9,7 +9,7 @@
         <input placeholder="Apellido" name="last_name" type="text" class="validate">
         <input placeholder="DNI" name="dni" type="number" class="validate">
         <input placeholder="E-mail" name="email" type="text" class="validate">
-        <input type="text" name="birth_date" class="datepicker">
+        <input placeholder="Fecha de nacimiento" type="text" name="birth_date" class="datepicker">
         <div class="row">
           <div class="col s6">
             <input placeholder="Altura" name="height" type="number" class="validate">
@@ -41,8 +41,7 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.datepicker');
-    var instances = M.Datepicker.init(elems, options);
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
   });
 </script>
