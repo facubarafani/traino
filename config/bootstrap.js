@@ -11,12 +11,6 @@
 
 module.exports.bootstrap = async function() {
 
-  if(await PersonalTrainer.count() > 0){
-    return;
-  }
-
-  await PersonalTrainer.createEach([
-    {emailAddress: 'personaltrainer@fitness.com', password: '12345', fullName: 'Juan Perez'},
-  ])
+  sails.argon2 = require('argon2');
 
 };
