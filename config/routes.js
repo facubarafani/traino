@@ -25,7 +25,7 @@ module.exports.routes = {
   'GET /user/login': {view: 'pages/user/login'},
   'POST /user/login': 'UserController.login',
   'GET /personaltrainer/login': {view: 'pages/personaltrainer/login'},
-  'POST /loginpersonaltrainerP': 'PersonalTrainerController.login',
+  'POST /personaltrainer/login': 'PersonalTrainerController.login',
   '/user/logout': 'UserController.logout',
   '/personaltrainer/logout': 'PersonalTrainerController.logout',
 
