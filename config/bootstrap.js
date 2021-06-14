@@ -16,7 +16,7 @@ module.exports.bootstrap = async function() {
   }
 
   await PersonalTrainer.createEach([
-    {email: 'personaltrainer@fitness.com', password: '12345', name: 'Juan Perez'},
+    {emailAddress: 'personaltrainer@fitness.com', password: '12345', fullName: 'Juan Perez'},
   ])
 
 };

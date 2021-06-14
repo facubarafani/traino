@@ -5,7 +5,7 @@ module.exports = {
     const password = req.param('password');
 
     const personaltrainer = await PersonalTrainer.findOne({
-      email: email,
+      emailAddress: email,
       password: password,
     });
     if(personaltrainer){

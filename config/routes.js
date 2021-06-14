@@ -32,6 +32,9 @@ module.exports.routes = {
   'GET /personaltrainer/register': {view: 'pages/personaltrainer/register'},
   'POST /personaltrainer/register': 'PersonalTrainerController.register',
 
+  'GET /personaltrainer/info': {view: 'pages/personaltrainer/info'},
+  'GET /user/info': {view: 'pages/user/info'},
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

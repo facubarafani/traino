@@ -4,11 +4,21 @@
   <nav>
     <% if(req.session.user || req.session.personaltrainer){ %>
       <% if(req.session.user){ %>
-        <%= req.session.user.fullName%>
-        <a href="/logout">logout</a>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">traino</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/user/info"> <%= req.session.user.fullName %> </a></li>
+            <li><a href="/logout">Salir</a></li>
+          </ul>
+        </div>
         <% }else{ %>
-        <%= req.session.personaltrainer.name%>
-        <a href="/logoutpersonaltrainer">logout</a>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">traino</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/personaltrainer/info"><%= req.session.personaltrainer.fullName%></a></li>
+            <li><a href="/logoutpersonaltrainer">Salir</a></li>
+          </ul>
+        </div>
         <%}%>
     <% }else{ %>
       <div class="nav-wrapper">
@@ -113,7 +123,11 @@
 
     <!--SCRIPTS-->
     <script src="/dependencies/sails.io.js"></script>
+    <script src="/js/pages/personaltrainer/info.page.js"></script>
     <script src="/js/pages/personaltrainer/register.page.js"></script>
+    <script src="/js/pages/user/info.page.js"></script>
+    <script src="/js/pages/user/infop.page.js"></script>
+    <script src="/js/pages/user/infp.page.js"></script>
     <script src="/js/pages/user/register.page.js"></script>
     <!--SCRIPTS END-->
 </body>
