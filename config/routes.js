@@ -19,13 +19,15 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'GET /404': {view: '404'},
+
   '/': { view: 'pages/homepage' },
-  'GET /loginP': {view: 'pages/loginP'},
-  'POST /loginP': 'UserController.login',
-  'GET /loginpersonaltrainerP': {view: 'pages/loginpersonaltrainerP'},
+  'GET /user/login': {view: 'pages/user/login'},
+  'POST /user/login': 'UserController.login',
+  'GET /personaltrainer/login': {view: 'pages/personaltrainer/login'},
   'POST /loginpersonaltrainerP': 'PersonalTrainerController.login',
-  '/logout': 'UserController.logout',
-  '/logoutpersonaltrainer': 'PersonalTrainerController.logout',
+  '/user/logout': 'UserController.logout',
+  '/personaltrainer/logout': 'PersonalTrainerController.logout',
 
   'GET /user/register': {view: 'pages/user/register'},
   'POST /user/register': 'UserController.register',

@@ -13,7 +13,7 @@ module.exports = {
       res.redirect('/');
     }else{
       req.session.personaltrainer = null;
-      res.redirect('/');
+      res.redirect('/404');
     }
   },
   logout: async function (req, res){

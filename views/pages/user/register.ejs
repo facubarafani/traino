@@ -1,53 +1,48 @@
 <div class="row">
-  <form action="" method="post">
-    <div class="col s2"></div>
-    <div class="input-field col s8">
-      <div class="row">
-        <div class="col s6">
-          <input placeholder="Nombre" name="name" type="text" class="validate">
-        </div>
-        <div class="col s6">
-          <input placeholder="Apellido" name="last_name" type="text" class="validate">
-        </div>
-      </div>
-      <input placeholder="DNI" name="dni" type="number" class="validate">
-      <input placeholder="E-mail" name="email" type="text" class="validate">
-      <input type="text" name="birth_date" class="datepicker">
-      <div class="row">
-        <div class="col s6">
-          <input placeholder="Altura" name="height" type="number" class="validate">
-        </div>
-        <div class="col s6">
-          <input placeholder="Peso" name="weight" type="number" class="validate">
-        </div>
-      </div>
-      <input placeholder="Telefono" name="contact_phone" type="number" class="validate">
-      <input placeholder="Contraseña" name="password" type="password" class="validate">
-      <input placeholder="Validar Contraseña" name="confirm_password" type="password" class="validate">
-      <div class="row">
-        <div class="col s8">
-        </div>
-        <div class="col s4">
-          <div class="row">
-            <button class="btn waves-effect waves-light" type="submit">
-              Registrarse
-              <i class="material-icons right">send</i>
-            </button>
+  <div class="col s3">
+  </div>
+  <div class="col s6">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Registro - Usuario</span>
+        <input placeholder="Nombre" name="name" type="text" class="validate">
+        <input placeholder="Apellido" name="last_name" type="text" class="validate">
+        <input placeholder="DNI" name="dni" type="number" class="validate">
+        <input placeholder="E-mail" name="email" type="text" class="validate">
+        <input type="text" name="birth_date" class="datepicker">
+        <div class="row">
+          <div class="col s6">
+            <input placeholder="Altura" name="height" type="number" class="validate">
           </div>
-          <div class="row">
-            Sos personal trainer? <a href="/personaltrainer/register">Registrate acá</a>
+          <div class="col s6">
+            <input placeholder="Peso" name="weight" type="number" class="validate">
           </div>
+        </div>
+        <input placeholder="Telefono" name="contact_phone" type="number" class="validate">
+        <input placeholder="Contraseña" name="password" type="password" class="validate">
+        <input placeholder="Validar Contraseña" name="confirm_password" type="password" class="validate">
+      </div>
+      <div class="card-action">
+        <div class="row">
+          <button class="btn waves-effect waves-light" type="submit">
+            Registrarse
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+        <div class="row">
+          Sos personal trainer? <a href="/personaltrainer/register">Registrate acá</a>
         </div>
       </div>
     </div>
-    <div class="row">
-    </div>
-    <div class="col s2"></div>
-  </form>
+  </div>
+  <div class="col s3">
+  </div>
+</div>
 </div>
 
 <script>
-  $(document).ready(function () {
-    $('.datepicker').datepicker();
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, options);
   });
 </script>

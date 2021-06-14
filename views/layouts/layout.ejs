@@ -8,7 +8,7 @@
           <a href="/" class="brand-logo">traino</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/user/info"> <%= req.session.user.fullName %> </a></li>
-            <li><a href="/logout">Salir</a></li>
+            <li><a href="/user/logout">Salir</a></li>
           </ul>
         </div>
         <% }else{ %>
@@ -16,7 +16,7 @@
           <a href="/" class="brand-logo">traino</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/personaltrainer/info"><%= req.session.personaltrainer.fullName%></a></li>
-            <li><a href="/logoutpersonaltrainer">Salir</a></li>
+            <li><a href="/personaltrainer/logout">Salir</a></li>
           </ul>
         </div>
         <%}%>
@@ -24,7 +24,7 @@
       <div class="nav-wrapper">
         <a href="/" class="brand-logo">traino</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/loginP">Iniciar Sesión</a></li>
+          <li><a href="/user/login">Iniciar Sesión</a></li>
           <li><a href="/user/register">Registrarse</a></li>
         </ul>
       </div>

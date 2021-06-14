@@ -14,7 +14,7 @@ module.exports = {
       res.redirect('/');
     }else{
       req.session.user = null;
-      res.redirect('/');
+      res.redirect('/404');
     }
   },
 
