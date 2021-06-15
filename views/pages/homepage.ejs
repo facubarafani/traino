@@ -3,7 +3,9 @@
     <div class="col s8">
         <div class="carousel carousel-slider center">
             <div class="carousel-fixed-item center">
-                <a href="/user/register" class="btn waves-effect white grey-text darken-text-2">Registrate!</a>
+                <% if(req.session.user == null && req.session.personaltrainer == null){ %>
+                    <a href="/user/register" class="btn waves-effect white grey-text darken-text-2">Registrate!</a>
+                <%}%>
             </div>
             <div class="carousel-item red white-text" href="#one!">
                 <img

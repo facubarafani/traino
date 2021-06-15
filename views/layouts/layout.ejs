@@ -64,9 +64,21 @@
 </head>
 
 <body>
-<main>
+
+
+  
+<% if(req.path == "/user/info" || req.path == "/personaltrainer/info"){ %>
+  <main id="infoImage">
   <%- body %>
-</main>
+  </main>
+  <% }else{ %>
+    <main>
+      <%- body %>
+    </main>
+<% } %>
+
+
+
     <!--
         Client-side Templates
         ========================
@@ -176,6 +188,17 @@
         flex-direction: column;
     }
     main {
-        flex: 1 0 auto;
+      flex: 1 0 auto;
+    }
+    #infoImage{
+      background-image: url("https://cdn.shopify.com/s/files/1/0550/7153/9361/t/4/assets/pf-0d71c141--VF-Home-Parallax.png?v=1614867594");
+      /* Set a specific height */
+      min-height: 500px;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 </style>

@@ -1,15 +1,39 @@
-<div class="row">
-<div class="col s2"></div>
-<div class="col s8">
+
+<div class="row" id="imMain">
+<div class="col s3"></div>
+<div class="col s7">
   <div class="row">
-    <div class="col s12">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
+    <div class="col s10">
+      <div class="card red accent-2 darken-1" id="rounded">
+        <div class="card-content black-text">
           <span class="card-title">Personal Trainer</span>
-          <%= req.session.personaltrainer.fullName %>
-          <%= req.session.personaltrainer.dni %>
-          <%= req.session.personaltrainer.phone %>
-          <%= req.session.personaltrainer.emailAddress %>
+          <div class="row">
+            <div class="col s1"></div>
+            <div class="col s10 red accent-1" id="rounded">
+              <table class="centered">
+                <thead>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="td">Nombre Completo:</td>
+                    <td id="td"><%= req.session.personaltrainer.fullName %></td>
+                  </tr>
+                  <tr>
+                    <td>DNI:</td>
+                    <td><%= req.session.personaltrainer.dni %></td>
+                  </tr>
+                  <tr>
+                    <td>Numero de Telefono:</td>
+                    <td><%= req.session.personaltrainer.phone %></td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td><%= req.session.personaltrainer.emailAddress %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -17,3 +41,28 @@
 </div>
 <div class="col s2"></div>
 </div>
+
+
+<style>
+  #imMain{
+    margin-top: 8%;
+  }
+  #rounded {
+    border-collapse:separate;
+    border:solid #ff1744 1px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+  }
+  #parallax {
+  /* The image used */
+  background-image: url("https://cdn.shopify.com/s/files/1/0550/7153/9361/t/4/assets/pf-0d71c141--VF-Home-Parallax.png?v=1614867594");
+      /* Set a specific height */
+      min-height: 500px;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+</style>
