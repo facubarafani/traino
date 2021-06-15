@@ -1,5 +1,7 @@
-# traino
-
+# **traino**
+ [![](https://firebasestorage.googleapis.com/v0/b/huge-58e8c.appspot.com/o/icon.png?alt=media&token=cd7bbee5-9a53-42fc-a14d-bd134e4712e6)](https://juandubowez.github.io/Proyecto-Programacion-Pagina-Web/)
+ _Traino es una aplicación web para seguir una rutina de ejercicios realizada particularmente por un personal trainer_
+ 
 a [Sails v1](https://sailsjs.com) application
 
 
