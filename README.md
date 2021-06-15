@@ -5,6 +5,9 @@
 a [Sails v1](https://sailsjs.com) application
 
 
+### Diagrama ER
+![Imagen del Diagrama ER](https://i.imgur.com/ujtDxRm.png)
+
 ### Links
 
 + [Sails framework documentation](https://sailsjs.com/get-started)
