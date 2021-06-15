@@ -1,71 +1,68 @@
 <!DOCTYPE html>
-<html>
-
-<nav>
-  <% if(req.session.user || req.session.personaltrainer){ %>
-    <% if(req.session.user){ %>
-      <div class="nav-wrapper">
-        <a href="/" class="brand-logo">traino</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/user/info">
-              <%= req.session.user.fullName %>
-            </a></li>
-          <li><a href="/user/logout">Salir</a></li>
-        </ul>
-      </div>
-      <% }else{ %>
-        <div class="nav-wrapper">
-          <a href="/" class="brand-logo">traino</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/personaltrainer/info">
-                <%= req.session.personaltrainer.fullName%>
-              </a></li>
-            <li><a href="/personaltrainer/logout">Salir</a></li>
-          </ul>
-        </div>
-        <%}%>
-          <% }else{ %>
+<html> 
+  <head>
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <% /* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
+    <% /* <meta name="robots" content="noindex"> */%>
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+    <title>traino</title>
+  </head>
+  
+  <body>
+    <div class="navbar-fixed">
+      <nav>
+        <% if(req.session.user || req.session.personaltrainer){ %>
+          <% if(req.session.user){ %>
             <div class="nav-wrapper">
-              <a href="/" class="brand-logo">traino</a>
+              <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="../../assets/images/logo.png"></a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/user/login">Iniciar Sesión</a></li>
-                <li><a href="/user/register">Registrarse</a></li>
+                <li><a href="/user/info">
+                    <%= req.session.user.fullName %>
+                  </a></li>
+                <li><a href="/user/logout">Salir</a></li>
               </ul>
             </div>
-            <% } %>
-</nav>
-
-<head>
-  <title>traino</title>
-
-  <!-- Viewport mobile tag for sensible mobile support -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <% /* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
-    <% /* <meta name="robots" content="noindex"> */%>
-
-      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-      <!--STYLES-->
-      <link rel="stylesheet" href="/styles/importer.css">
-      <!--STYLES END-->
-</head>
-
-<body>
-
-
+            <% }else{ %>
+              <div class="nav-wrapper">
+                <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="../../../assets/images/logo.png"></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a href="/personaltrainer/info">
+                      <%= req.session.personaltrainer.fullName%>
+                    </a></li>
+                  <li><a href="/personaltrainer/logout">Salir</a></li>
+                </ul>
+              </div>
+              <%}%>
+                <% }else{ %>
+                  <div class="nav-wrapper">
+                    <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="images/logo.png"></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                      <li><a href="/user/login">Iniciar Sesión</a></li>
+                      <li><a href="/user/register">Registrarse</a></li>
+                    </ul>
+                  </div>
+                  <% } %>
+      </nav>
+    </div>
   
 <% if(req.path == "/user/info" || req.path == "/personaltrainer/info"){ %>
   <main id="infoImage">
@@ -76,73 +73,6 @@
       <%- body %>
     </main>
 <% } %>
-
-
-
-    <!--
-        Client-side Templates
-        ========================
-
-        HTML templates are important prerequisites of modern, rich client applications.
-        To work their magic, frameworks like React, Vue.js, Angular, Ember, and Backbone
-        require that you load these templates client-side.
-
-        By default, your Gruntfile is configured to automatically load and precompile
-        client-side JST templates in your `assets/templates` folder, then
-        include them here automatically (between TEMPLATES and TEMPLATES END).
-
-        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
-        For example, here are a few things you could do:
-
-            + Import templates from other directories
-            + Use a different view engine (handlebars, dust, pug/jade, etc.)
-            + Internationalize your client-side templates using a server-side
-              stringfile before they're served.
-    -->
-
-    <!--TEMPLATES-->
-    <!--TEMPLATES END-->
-
-
-    <!--
-        Server-side View Locals
-        ========================
-
-        Sometimes, it's convenient to get access to your server-side view locals from
-        client-side JavaScript.  This can improve page load times, remove the need for
-        extra AJAX requests, and make your client-side code easier to understand and
-        to maintain.  Sails provides a simple mechanism for accessing dynamic view
-        locals: the "exposeLocalsToBrowser()" view partial.
-
-        For more information on using this built-in feature, see:
-        https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
-
-    -->
-
-
-    <!--
-
-      Client-side Javascript
-      ========================
-
-      You can always bring in JS files manually with `script` tags, or asynchronously
-      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
-      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
-
-      By default, files in your `assets/js` folder are included here
-      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
-      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
-      and concatenated into a single file.
-
-      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-      For example, here are a few things you could do:
-
-          + Change the order of your scripts
-          + Import scripts from other directories
-          + Use a different preprocessor, like TypeScript
-
-    -->
-
     <!--SCRIPTS-->
     <script src="/dependencies/sails.io.js"></script>
     <script src="/js/pages/personaltrainer/info.page.js"></script>
@@ -152,33 +82,31 @@
     <script src="/js/pages/user/infp.page.js"></script>
     <script src="/js/pages/user/register.page.js"></script>
     <!--SCRIPTS END-->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">traino</h5>
+            <p class="grey-text text-lighten-4">Tu rutina en un solo lugar</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <!-- <h5 class="white-text">Acceso</h5> -->
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+              <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+              <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+              <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2021 traino
+        </div>
+      </div>
+    </footer>
 </body>
-
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">traino</h5>
-        <p class="grey-text text-lighten-4">Tu rutina en un solo lugar</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <!-- <h5 class="white-text">Acceso</h5> -->
-        <ul>
-          <li><a class="grey-text text-lighten-3" href="#!"></a></li>
-          <li><a class="grey-text text-lighten-3" href="#!"></a></li>
-          <li><a class="grey-text text-lighten-3" href="#!"></a></li>
-          <li><a class="grey-text text-lighten-3" href="#!"></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-      © 2021 traino
-    </div>
-  </div>
-</footer>
-
 </html>
 
 <style>
@@ -200,5 +128,10 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+    }
+    .imgnav{
+      width: 30%;
+      margin-left: 10px;
+      margin-top: 2.5px;
     }
 </style>

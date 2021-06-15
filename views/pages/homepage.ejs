@@ -1,7 +1,6 @@
-<div class="row" id="carousel-row">
-    <div class="col s2"></div>
-    <div class="col s8">
-        <div class="carousel carousel-slider center">
+<div class="row" >
+    <div class="col s12">
+        <div class= "carousel carousel-slider" id="carusel" >
             <div class="carousel-fixed-item center">
                 <% if(req.session.user == null && req.session.personaltrainer == null){ %>
                     <a href="/user/register" class="btn waves-effect white grey-text darken-text-2">Registrate!</a>
@@ -29,8 +28,55 @@
             </div>
         </div>
     </div>
-    <div class="col s2"></div>
-</div>
+    <div class="col s12"></div>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons"style="font-size: xx-large;">fitness_center</i></h2>
+                        <h5 class="center">Entrenamientos</h5>
+                        <p class="light"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et ligula posuere, iaculis ante sed, rutrum justo. Fusce vitae faucibus massa.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons"style="font-size: xx-large;">restaurant</i></h2>
+                        <h5 class="center">Nutricion</h5>
+                        <p class="light"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et ligula posuere, iaculis ante sed, rutrum justo. Fusce vitae faucibus massa. Pellentesque sit amet tortor non justo tempor tempor. Sed vel ligula sed erat aliquam hendrerit. In eget justo in odio pharetra posuere ut in ante. Fusce augue nunc, fringilla quis pretium ac, sollicitudin et justo.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons"style="font-size: xx-large;">lightbulb_outline</i></h2>
+                        <h5 class="center">Consejos</h5>
+                        <p class="light"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et ligula posuere, iaculis ante sed, rutrum justo. Fusce vitae faucibus massa. Pellentesque sit amet tortor non justo tempor tempor. Sed vel ligula sed erat aliquam hendrerit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <div class="col s12 center">
+                        <h3><i class="mdi-content-send brown-text"></i></h3>
+                        <h4>Porque elegir TRAINO</h4>
+                        <p class="left-align light">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et ligula posuere, 
+                            iaculis ante sed, rutrum justo. Fusce vitae faucibus massa.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Integer et ligula posuere, iaculis ante sed, rutrum justo. Fusce vitae faucibus massa.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Integer et ligula posuere, iaculis ante sed, rutrum justo. Fusce vitae faucibus massa.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Integer et ligula posuere, iaculis ante sed, rutrum justo. Fusce vitae faucibus massa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 <script>
     $('.carousel.carousel-slider').carousel({
@@ -42,6 +88,10 @@
 <style>
     img {
         width: 100%;
-        aspect-ratio: 16/9;
+        aspect-ratio: 5/4;
+    }
+    #carusel{
+    padding: 0;
+    width: 100%;
     }
 </style>
