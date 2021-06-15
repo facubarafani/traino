@@ -1,22 +1,59 @@
 <div class="row">
-  <div class="col s2"></div>
-  <div class="col s8">
+  <div class="col s3"></div>
+  <div class="col s7">
     <div class="row">
-      <div class="col s12">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
+      <div class="col s10">
+        <div class="card red accent-2 darken-1" id="rounded">
+          <div class="card-content black-text">
             <span class="card-title">Usuario</span>
-            <%= req.session.user.fullName %>
-            <%= req.session.user.dni %>
-            <%= req.session.user.phone %>
-            <%= req.session.user.emailAddress %>
-            <%= req.session.user.height %>
-            <%= req.session.user.weight %>
-            <%= req.session.user.birthDate %>
+            <div class="row">
+              <div class="col s1"></div>
+              <div class="col s10 red accent-1" id="rounded">
+                <table class="centered">
+                  <thead>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="td">Nombre Completo:</td>
+                      <td id="td"><%= req.session.user.fullName %></td>
+                    </tr>
+                    <tr>
+                      <td>DNI:</td>
+                      <td><%= req.session.user.dni %></td>
+                    </tr>
+                    <tr>
+                      <td>Email:</td>
+                      <td><%= req.session.user.emailAddress %></td>
+                    </tr>
+                    <tr>
+                      <td>Peso:</td>
+                      <td><%= req.session.user.weight %></td>
+                    </tr>
+                    <tr>
+                      <td>Altura:</td>
+                      <td><%= req.session.user.height %></td>
+                    </tr>
+                    <tr>
+                      <td>Fecha de Nacimiento:</td>
+                      <td><%= req.session.user.birthDate %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col s2"></div>
   </div>
+
+
+  <style>
+    #rounded {
+      border-collapse:separate;
+      border:solid #ff1744 1px;
+      border-radius:6px;
+      -moz-border-radius:6px;
+    }
+  </style>
