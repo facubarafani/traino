@@ -34,6 +34,9 @@ module.exports.routes = {
   'GET /personaltrainer/register': {view: 'pages/personaltrainer/register'},
   'POST /personaltrainer/register': 'PersonalTrainerController.register',
 
+  'GET /personaltrainer/createplan': {view: 'pages/personaltrainer/createplan'},
+  'POST /personaltrainer/createplan': {view: 'pages/personaltrainer/createplan'},
+
   'GET /personaltrainer/info': {view: 'pages/personaltrainer/info'},
   'GET /user/info': {view: 'pages/user/info'},
 

@@ -7,7 +7,7 @@ module.exports = {
     const personaltrainer = await PersonalTrainer.findOne({
       emailAddress: email,
     });
-    if(personaltrainer && sails.argon2.verify(personaltrainer.password, password)){
+    if(personaltrainer && await sails.argon2.verify(personaltrainer.password, password)){
       req.session.personaltrainer = personaltrainer;
       res.redirect('/');
     }else{

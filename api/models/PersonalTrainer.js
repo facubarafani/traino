@@ -2,15 +2,14 @@
  * PersonalTrainer.js
  *
  * A personal trainer which can have multiple users and associate plans to them
- * 
- * 
+ *
+ *
  * SailsJS already has by deafult created_at and updated_at
  */
 
 module.exports = {
 
     attributes: {
-
         //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
         //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
         //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
@@ -26,20 +25,23 @@ module.exports = {
             maxLength: 120,
             example: 'Mary Sue van der McHenst'
         },
-        age: {
-            type: 'number',
-            description: 'Personal Trainer age'
+        birthDate: {
+              type: 'string',
+              description: 'Personal Trainer age'
         },
-        phone: {
-            type: 'string',
+        contactPhone: {
+            type: 'number',
             description: 'Personal Trainer contact number'
         },
         emailAddress: {
             type: 'string',
+            required: true,
             description: 'Personal Trainer email address'
         },
         password: {
             type: 'string',
+            required: true,
+            protect: true,
             description: 'Personal Trainer password to access webapp'
         },
 

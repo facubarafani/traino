@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html> 
+<html>
   <head>
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
+
     <% /* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
     <% /* <meta name="robots" content="noindex"> */%>
-    
+
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    
+
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
     <title>traino</title>
   </head>
-  
+
   <body>
     <div class="navbar-fixed">
       <nav>
@@ -41,29 +41,30 @@
                 <li><a href="/user/logout">Salir</a></li>
               </ul>
             </div>
-            <% }else{ %>
-              <div class="nav-wrapper">
-                <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="../../../assets/images/logo.png"></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                  <li><a href="/personaltrainer/info">
-                      <%= req.session.personaltrainer.fullName%>
-                    </a></li>
-                  <li><a href="/personaltrainer/logout">Salir</a></li>
-                </ul>
-              </div>
-              <%}%>
-                <% }else{ %>
-                  <div class="nav-wrapper">
-                    <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="images/logo.png"></a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                      <li><a href="/user/login">Iniciar Sesión</a></li>
-                      <li><a href="/user/register">Registrarse</a></li>
-                    </ul>
-                  </div>
-                  <% } %>
+          <% }else{ %>
+            <div class="nav-wrapper">
+              <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="../../../assets/images/logo.png"></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li> <a href="/personaltrainer/createplan">Crear Plan</a></li>
+                <li><a href="/personaltrainer/info">
+                    <%= req.session.personaltrainer.fullName%>
+                  </a></li>
+                <li><a href="/personaltrainer/logout">Salir</a></li>
+              </ul>
+            </div>
+          <%}%>
+        <% }else{ %>
+          <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="images/logo.png"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="/user/login">Iniciar Sesión</a></li>
+              <li><a href="/user/register">Registrarse</a></li>
+            </ul>
+          </div>
+        <% } %>
       </nav>
     </div>
-  
+
 <% if(req.path == "/user/info" || req.path == "/personaltrainer/info"){ %>
   <main id="infoImage">
   <%- body %>

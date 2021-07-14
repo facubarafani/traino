@@ -7,8 +7,8 @@ module.exports = {
 
     const user = await User.findOne({
       emailAddress: email,
-      });
-    if(user && sails.argon2.verify(user.password, password)){
+    });
+    if(user && await sails.argon2.verify(user.password, password)){
       req.session.user = user;
       res.redirect('/');
     }else{
@@ -35,12 +35,12 @@ module.exports = {
 
     password = await sails.argon2.hash(password);
 
-    var createdUser = await User.create({fullName: `${lastName} ${name}`, emailAddress: email, dni: dni, password: password, height: height, weight: weight, birthDate: birthDate, contactPhone: contactPhone}).fetch()
+    var createdUser = await User.create({fullName: `${lastName} ${name}`, emailAddress: email, dni: dni, password: password, height: height, weight: weight, birthDate: birthDate, contactPhone: contactPhone}).fetch();
 
     if (createdUser) {
-      res.redirect('/')
+      res.redirect('/');
     } else {
-      console.log("Error al crear usuario")
+      console.log('Error al crear usuario');
     }
 
   },
