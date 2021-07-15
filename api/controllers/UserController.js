@@ -44,4 +44,22 @@ module.exports = {
     }
 
   },
+  personalTrainer: async function (req, res){
+    const allPersonalTrainers = await PersonalTrainer.find();
+    res.view('pages/user/personalTrainer', {allPersonalTrainers});
+  },
+  addTrainer: async function (req, res){
+    const personalTrainerId = req.param('personalTrainerId');
+    const personalTrainer = await PersonalTrainer.findOne({id: personalTrainerId,});
+    const userId = req.session.user.id;
+
+    if(!personalTrainer){
+      res.notFound();
+    }
+
+    req.session.user.personalTrainer = personalTrainerId;
+    await User.update({ id: userId }).set({personalTrainer: personalTrainerId}).fetch();
+
+    res.redirect('/');
+  }
 };

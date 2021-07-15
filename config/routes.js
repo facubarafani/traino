@@ -22,10 +22,15 @@ module.exports.routes = {
   'GET /404': {view: '404'},
 
   '/': { view: 'pages/homepage' },
+
+  'GET /user/personalTrainer': 'UserController.personalTrainer',
+  '/selectPersonalTrainer/:personalTrainerId':'UserController.addTrainer',
+
   'GET /user/login': {view: 'pages/user/login'},
   'POST /user/login': 'UserController.login',
   'GET /personaltrainer/login': {view: 'pages/personaltrainer/login'},
   'POST /personaltrainer/login': 'PersonalTrainerController.login',
+
   '/user/logout': 'UserController.logout',
   '/personaltrainer/logout': 'PersonalTrainerController.logout',
 
