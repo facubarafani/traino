@@ -35,6 +35,9 @@
             <div class="nav-wrapper">
               <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="../../assets/images/logo.png"></a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <% if(req.session.user.exercises){ %>
+                  <li><a href="/user/plan">Plan</a></li>
+                <% } %>
                 <li> <a href="/user/personalTrainer">Entrenador</a></li>
                 <li><a href="/user/info">
                     <%= req.session.user.fullName %>
@@ -46,7 +49,7 @@
             <div class="nav-wrapper">
               <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="../../../assets/images/logo.png"></a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li> <a href="/personaltrainer/createplan">Crear Plan</a></li>
+                <li> <a href="/personaltrainer/plan">Crear Plan</a></li>
                 <li><a href="/personaltrainer/info">
                     <%= req.session.personaltrainer.fullName%>
                   </a></li>

@@ -61,5 +61,11 @@ module.exports = {
     await User.update({ id: userId }).set({personalTrainer: personalTrainerId}).fetch();
 
     res.redirect('/');
-  }
+  },
+
+  plan: async function (req, res) {
+    const userExercisesId = req.session.user.exercises;
+    const allExercises = await Exercise.find({id: userExercisesId,});
+    res.view('pages/user/plan', {allExercises});
+  },
 };

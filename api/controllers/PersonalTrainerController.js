@@ -15,10 +15,12 @@ module.exports = {
       res.redirect('/404');
     }
   },
+
   logout: async function (req, res){
     req.session.personaltrainer = null;
     res.redirect('/');
   },
+
   register: async function (req, res){
     const name = req.param('name');
     const lastName = req.param('last_name');
@@ -37,6 +39,26 @@ module.exports = {
     } else {
       console.log("Error al crear usuario")
     }
-
   },
+
+  plan: async function (req, res){
+    const personalTrainerId = req.session.personaltrainer.id;
+    const allUsers = await User.find({personalTrainer: personalTrainerId});
+    res.view('pages/personaltrainer/plan', {allUsers});
+  },
+
+  createPlan: async function (req, res){
+    const userId = req.param('userId');
+    res.view('pages/personaltrainer/createPlan', {userId});
+  },
+
+  addPlan: async function (req, res){
+    const userId = req.param('userId');
+    const descripcion = req.param('descripcion');
+    const nombreEjercicio = req.param('nombre');
+
+    const createdPlan = await Exercise.create({name: nombreEjercicio, description: descripcion,}).fetch();
+    await User.update({ id: userId }).set({exercises: createdPlan.id});
+    res.redirect('/');
+  }
 };

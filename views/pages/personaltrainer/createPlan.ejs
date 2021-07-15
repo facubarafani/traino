@@ -1,18 +1,18 @@
 <div class="row">
-    <form action="/personaltrainer/login" method="post">
+    <form action="/personaltrainer/createPlan/<%= userId %>" method="post">
         <div class="col s3"></div>
         <div class="input-field col s6">
             <div class="row">
                 <div class="col s12">
                     <div class="card">
                         <div class="card-content">
-                            <span class="card-title">Iniciar Sesión - Personal Trainer</span>
-                            <input placeholder="E-mail" name="email" type="text" class="validate">
-                            <input placeholder="Contraseña" name="password" type="password" class="validate">
+                            <span class="card-title">Crear Ejercicio</span>
+                            <input placeholder="Nombre Ejercicio" name="nombre" type="text">
+                            <input placeholder="Descripcion" name="descripcion" type="text">
                         </div>
                         <div class="card-action">
                             <button class="btn waves-effect waves-light" type="submit">
-                                Iniciar sesión
+                                Crear Ejercicio
                                 <i class="material-icons right">send</i>
                             </button>
                         </div>

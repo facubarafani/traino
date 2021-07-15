@@ -123,7 +123,10 @@ email status until they click the link in the confirmation email.`
     },
     membership: {
       model: 'membership'
-    }
+    },
+    exercises: {
+      model: 'exercise'
+    },
   },
 
 
