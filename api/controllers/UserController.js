@@ -44,4 +44,17 @@ module.exports = {
     }
 
   },
+
+  getAllUsers: async function (req, res) {
+    const allUsers = await Users.find()
+  },
+
+  getUsersByName: async function (req, res) {
+    const name = req.param('search')
+    const usersByName = await Users.find({
+      name: {
+        'contains' : name
+      }
+    });
+  }
 };
