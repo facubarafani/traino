@@ -80,11 +80,31 @@
     </div>
 </div>
 
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">add</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating green tooltipped" data-tooltip="Nuevo plan" data-position="left" data-delay="50"><i class="material-icons">create_new_folder</i></a></li>
+      <li><a class="btn-floating blue tooltipped" data-tooltip="Nueva membresia" data-position="left" data-delay="50" ><i class="material-icons">control_point</i></a></li>
+    </ul>
+  </div>
+
 <script>
     $('.carousel.carousel-slider').carousel({
         fullWidth: true,
         indicators: true
     });
+
+  $(document).ready(function(){
+    $('.fixed-action-btn').floatingActionButton();
+  });
+
+  $(".tooltipped").tooltip();
+
+$(".fixed-action-btn").children("ul").find(".btn-floating").bind("click", function() {
+  alert("Launching action no. " + ($(this).parent().index() + 1));
+});
 </script>
 
 <style>

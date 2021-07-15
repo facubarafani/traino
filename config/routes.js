@@ -40,6 +40,9 @@ module.exports.routes = {
   'GET /personaltrainer/info': {view: 'pages/personaltrainer/info'},
   'GET /user/info': {view: 'pages/user/info'},
 
+  'GET /membership/create': {view: 'pages/membership/create'},
+  // 'POST /membership/create': ''
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
