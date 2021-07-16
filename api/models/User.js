@@ -125,7 +125,8 @@ email status until they click the link in the confirmation email.`
       model: 'membership'
     },
     exercises: {
-      model: 'exercise'
+      collection: 'exercise',
+      via: 'users'
     },
   },
 

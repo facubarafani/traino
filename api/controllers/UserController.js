@@ -64,8 +64,8 @@ module.exports = {
   },
 
   plan: async function (req, res) {
-    const userExercisesId = req.session.user.exercises;
-    const allExercises = await Exercise.find({id: userExercisesId,});
+    const userId = req.session.user.id;
+    const allExercises = await Exercise.find({users: userId,});
     res.view('pages/user/plan', {allExercises});
   },
 };

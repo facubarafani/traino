@@ -2,11 +2,9 @@
     <% for(let i of allUsers){ %>
         <div>
             <%= i.fullName %>
-            <% if(i.exercises){ %>
-                Con Rutina
-            <% }else{ %>
+                <a href="/viewPlan/<%= i.id %>">Ver Rutina</a>
                 <a href="/createPlan/<%= i.id %>">Crear Rutina</a>
-            <% } %>
+                <a href="/viewProfile/<%= i.id %>">Perfil Usuario</a>
         </div>
     <% } %>
 </div>

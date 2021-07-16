@@ -1,13 +1,21 @@
 <div class = "content">
         <% for(let i of allExercises){ %>
-                <div>
-                    Nombre Ejercicio:
-                    <%= i.name %>
-                </div>
-                <div>
-                    Descripción Ejercicio:
-                    <%= i.description %>
-                </div>
+            <div>
+                Nombre Ejercicio:
+                <%= i.name %>
+            </div>
+            <div>
+                Descripción Ejercicio:
+                <%= i.description %>
+            </div>
+            <div>
+                Repeticiones:
+                <%= i.repetitions %>
+            </div>
+            <div>
+                Series:
+                <%= i.series %>
+            </div>
                 <img src="<%= i.image %>">
         <% } %>
 </div>

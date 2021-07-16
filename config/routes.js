@@ -27,9 +27,12 @@ module.exports.routes = {
   'GET /user/plan': 'UserController.plan',
   '/selectPersonalTrainer/:personalTrainerId':'UserController.addTrainer',
 
+  'GET /viewProfile/:userId': 'PersonalTrainerController.viewProfile',
   'GET /personaltrainer/plan': 'PersonalTrainerController.plan',
   'GET /createPlan/:userId':'PersonalTrainerController.createPlan',
   'POST /personaltrainer/createPlan/:userId':'PersonalTrainerController.addPlan',
+  'GET /viewPlan/:userId':'PersonalTrainerController.viewPlan',
+  'GET /personaltrainer/eraseExercise/:exerciseId':'PersonalTrainerController.eraseExercise',
 
   'GET /user/login': {view: 'pages/user/login'},
   'POST /user/login': 'UserController.login',
