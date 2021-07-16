@@ -56,8 +56,9 @@ module.exports = {
     const userId = req.param('userId');
     const descripcion = req.param('descripcion');
     const nombreEjercicio = req.param('nombre');
+    const imagenLink = req.param('imagen');
 
-    const createdPlan = await Exercise.create({name: nombreEjercicio, description: descripcion,}).fetch();
+    const createdPlan = await Exercise.create({name: nombreEjercicio, description: descripcion, image: imagenLink}).fetch();
     await User.update({ id: userId }).set({exercises: createdPlan.id});
     res.redirect('/');
   }
