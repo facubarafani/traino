@@ -1,21 +1,47 @@
-<div class = "content">
-        <% for(let i of allExercises){ %>
-            <div>
-                Nombre Ejercicio:
-                <%= i.name %>
+<div class="content">
+    <% for(let i of allExercises){ %>
+        <div class="row">
+            <div class= "col s4"></div>
+            <div class="col s8">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="<%= i.image %>">
+                            <span class="card-title">
+                                <div class="strokeme">
+                                <%= i.name %>
+                            </div>
+                            </span>
+                        </div>
+                        <div class="card-content">
+                            <h5>Descripción</h5>
+                            <div class="divider"></div>
+                            <p>
+                                <%= i.description %>
+                            </p>
+                            <h5>Repeticiones</h5>
+                            <div class="divider"></div>
+                            <p>
+                                <%= i.repetitions %>
+                            </p>
+                            <h5>Series</h5>
+                            <div class="divider"></div>
+                            <p>
+                                <%= i.series %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                Descripción Ejercicio:
-                <%= i.description %>
-            </div>
-            <div>
-                Repeticiones:
-                <%= i.repetitions %>
-            </div>
-            <div>
-                Series:
-                <%= i.series %>
-            </div>
-                <img src="<%= i.image %>">
+            <div class= "col s4"></div>
+        </div>
+
         <% } %>
 </div>
+
+<style>
+    .strokeme {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+</style>
