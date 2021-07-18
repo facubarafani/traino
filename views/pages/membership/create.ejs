@@ -37,6 +37,7 @@
         </div>
         <div class="col s3"></div>
       </div>
+    </div>
   </form>
 </div>
 
@@ -102,14 +103,14 @@
       div.className = "col s6";
       var input = document.createElement("input");
       input.id = "inputField";
-      input.disabled = true;
-      input.value = `${selectedUserId}`;
+      input.readOnly = true;
+      input.value = selectedUserId;
       input.name = "userId";
       div.appendChild(input);
       userRow.appendChild(div);
     } else {
       var userRow = document.getElementById("inputField");
-      userRow.value = `${selectedUserId}`;
+      userRow.value = selectedUserId;
     }
 
   };
