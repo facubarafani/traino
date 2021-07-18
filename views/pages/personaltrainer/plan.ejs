@@ -1,10 +1,15 @@
-<div class = "content">
-    <% for(let i of allUsers){ %>
-        <div>
-            <%= i.fullName %>
-                <a href="/viewPlan/<%= i.id %>">Ver Rutina</a>
-                <a href="/createPlan/<%= i.id %>">Crear Rutina</a>
-                <a href="/viewProfile/<%= i.id %>">Perfil Usuario</a>
-        </div>
-    <% } %>
+<div class="content">
+    <ul class="collection">
+        <% for(let i of allUsers){ %>
+            <li class="collection-item">
+                <%= i.fullName %>
+                    <div class="secondary-content">
+                        <a href="/viewPlan/<%= i.id %>" class="waves-effect waves-light btn">Ver Rutina</a>
+                        <a href="/createPlan/<%= i.id %>" class="waves-effect waves-light btn">Crear Rutina</a>
+                        <a href="/viewProfile/<%= i.id %>" class="waves-effect waves-light btn">Perfil Usuario</a>
+                    </div>
+
+            </li>
+            <% } %>
+    </ul>
 </div>
