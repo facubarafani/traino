@@ -1,0 +1,62 @@
+<div class="row" id="topDiv">
+  <div class="col s3"></div>
+  <div class="col s7">
+    <div class="row">
+      <div class="col s10">
+        <div class="card red accent-2 darken-1" id="rounded">
+          <div class="card-content black-text">
+            <span class="card-title">Usuario</span>
+            <div class="row">
+              <div class="col s1"></div>
+              <div class="col s10 red accent-1" id="rounded">
+                <table class="centered">
+                  <thead>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="td">Nombre Completo:</td>
+                      <td id="td"><%= req.session.user.fullName %></td>
+                    </tr>
+                    <tr>
+                      <td>DNI:</td>
+                      <td><%= req.session.user.dni %></td>
+                    </tr>
+                    <tr>
+                      <td>Email:</td>
+                      <td><%= req.session.user.emailAddress %></td>
+                    </tr>
+                    <tr>
+                      <td>Peso:</td>
+                      <td><%= req.session.user.weight %></td>
+                    </tr>
+                    <tr>
+                      <td>Altura:</td>
+                      <td><%= req.session.user.height %></td>
+                    </tr>
+                    <tr>
+                      <td>Fecha de Nacimiento:</td>
+                      <td><%= req.session.user.birthDate %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <style>
+    #rounded {
+      border-collapse:separate;
+      border:solid #ff1744 1px;
+      border-radius:6px;
+      -moz-border-radius:6px;
+    }
+    #topDiv{
+      margin-top: 8%;
+    }
+  </style>
