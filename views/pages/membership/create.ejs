@@ -66,7 +66,6 @@
   </div>
 
 <script>
-  console.log("Tuvieja");
   var selectedUserId = null
 
   $(document).ready(function(){
@@ -78,9 +77,18 @@
   });
 
   function selectUser(id) {
-    var currentElement = document.getElementById("user_"+id)
+    var allElements = document.getElementsByClassName("collection-item")
+    // var currentElement = document.getElementById("user_"+id)
     selectedUserId = id
-    let selectButton = currentElement.firstElementChild
-    selectButton.textContent = "Deseleccionar"
+    for (i in allElements) {
+      let actualElement = allElements.item(i)
+      let selectButton = actualElement.firstElementChild
+      if (i == selectedUserId-1) {
+        selectButton.textContent = "Deseleccionar"
+      } else if (i<=i--){
+        selectButton.textContent = "Seleccionar"
+      }
+    }
+    
   };
 </script>
