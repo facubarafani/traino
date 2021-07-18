@@ -44,6 +44,7 @@ module.exports = {
     }
 
   },
+  
   personalTrainer: async function (req, res){
     const allPersonalTrainers = await PersonalTrainer.find();
     res.view('pages/user/personalTrainer', {allPersonalTrainers});
@@ -68,4 +69,18 @@ module.exports = {
     const allExercises = await Exercise.find({users: userId,});
     res.view('pages/user/plan', {allExercises});
   },
+
+  getAllUsers: async function (req, res) {
+    const allUsers = await User.find();
+    res.view('pages/membership/create', {allUsers})
+  },
+
+  getUsersByName: async function (req, res) {
+    const name = req.param('search')
+    const usersByName = await Users.find({
+      name: {
+        'contains' : name
+      }
+    });
+  }
 };
