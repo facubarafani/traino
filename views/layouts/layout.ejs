@@ -33,8 +33,10 @@
         <% if(req.session.user || req.session.personaltrainer){ %>
           <% if(req.session.user){ %>
             <div class="nav-wrapper">
-              <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="../../assets/images/logo.png"></a>
+              <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="images/logo.png"></a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/user/plan">Plan</a></li>
+                <li> <a href="/user/personalTrainer">Entrenador</a></li>
                 <li><a href="/user/info">
                     <%= req.session.user.fullName %>
                   </a></li>
@@ -43,9 +45,9 @@
             </div>
           <% }else{ %>
             <div class="nav-wrapper">
-              <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="../../../assets/images/logo.png"></a>
+              <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="images/logo.png"></a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li> <a href="/personaltrainer/createplan">Crear Plan</a></li>
+                <li> <a href="/personaltrainer/plan">Crear Plan</a></li>
                 <li><a href="/personaltrainer/info">
                     <%= req.session.personaltrainer.fullName%>
                   </a></li>

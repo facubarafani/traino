@@ -1,0 +1,10 @@
+<div class = "content">
+    <% for(let i of allUsers){ %>
+        <div>
+            <%= i.fullName %>
+                <a href="/viewPlan/<%= i.id %>">Ver Rutina</a>
+                <a href="/createPlan/<%= i.id %>">Crear Rutina</a>
+                <a href="/viewProfile/<%= i.id %>">Perfil Usuario</a>
+        </div>
+    <% } %>
+</div>
