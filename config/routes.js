@@ -41,7 +41,7 @@ module.exports.routes = {
   'GET /user/info': {view: 'pages/user/info'},
 
   'GET /membership/create': 'UserController.getAllUsers',
-  'POST /membership/create': 'MemberShipController.create',
+  'POST /membership/create': 'MembershipController.create',
 
   /***************************************************************************
   *                                                                          *
