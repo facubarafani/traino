@@ -52,6 +52,13 @@
         </div>
         <div class="col s2"></div>
       </div>
+      <ul class="collection">
+      <% for(let i of allUsers){ %>
+          <li id="user_<%= i.id %>" class="collection-item"><%= i.fullName %>
+          <a onclick = "selectUser(<%= i.id %>)" class="secondary-content" >Seleccionar</a>
+        </li>
+    <% } %>
+      </ul>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Confirmar</a>
@@ -59,6 +66,9 @@
   </div>
 
 <script>
+  console.log("Tuvieja");
+  var selectedUserId = null
+
   $(document).ready(function(){
     $('.datepicker').datepicker();
   });
@@ -66,4 +76,11 @@
   $(document).ready(function(){
     $('.modal').modal();
   });
+
+  function selectUser(id) {
+    var currentElement = document.getElementById("user_"+id)
+    selectedUserId = id
+    let selectButton = currentElement.firstElementChild
+    selectButton.textContent = "Deseleccionar"
+  };
 </script>

@@ -46,7 +46,8 @@ module.exports = {
   },
 
   getAllUsers: async function (req, res) {
-    const allUsers = await Users.find()
+    const allUsers = await User.find();
+    res.view('pages/membership/create', {allUsers})
   },
 
   getUsersByName: async function (req, res) {
