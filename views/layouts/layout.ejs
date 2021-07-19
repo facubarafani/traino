@@ -36,8 +36,10 @@
           <div class="nav-wrapper">
             <a href="/" class="brand-logo">traino</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <% if(req.session.user.membership){ %>
               <li><a href="/user/plan">Plan</a></li>
               <li> <a href="/user/personalTrainer">Entrenador</a></li>
+              <% } %>
               <li><a href="/user/info">
                   <%= req.session.user.fullName %>
                 </a></li>

@@ -9,7 +9,22 @@ module.exports = {
       emailAddress: email,
     });
     if(user && await sails.argon2.verify(user.password, password)){
-      req.session.user = user;
+
+      if(user.membership){
+        const membresia = await Membership.findOne({user: user.id,});
+        const date = membresia.initialDate;
+        const duracionMembresia = membresia.duration;
+        const dateObject = new Date(date);
+        const actualDate = new Date();
+
+        dateObject.setMonth(dateObject.getMonth() + duracionMembresia);
+        if(actualDate.getTime() > dateObject.getTime()){
+          user.membership = null;
+          await User.update({id: user.id,}).set({membership: null,});
+          await Membership.destroy({user: user.id,});
+        }
+        req.session.user = user;
+      }
       res.redirect('/');
     }else{
       req.session.user = null;
@@ -44,7 +59,7 @@ module.exports = {
     }
 
   },
-  
+
   personalTrainer: async function (req, res){
     const allPersonalTrainers = await PersonalTrainer.find();
     res.view('pages/user/personalTrainer', {allPersonalTrainers});
