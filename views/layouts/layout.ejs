@@ -34,7 +34,7 @@
       <% if(req.session.user || req.session.personaltrainer){ %>
         <% if(req.session.user){ %>
           <div class="nav-wrapper">
-            <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="images/logo.png"></a>
+            <a href="/" class="brand-logo">traino</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="/user/plan">Plan</a></li>
               <li> <a href="/user/personalTrainer">Entrenador</a></li>
@@ -46,7 +46,7 @@
           </div>
           <% }else{ %>
             <div class="nav-wrapper">
-              <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="images/logo.png"></a>
+              <a href="/" class="brand-logo">traino</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li> <a href="/personaltrainer/plan">Crear Plan</a></li>
                 <li><a href="/personaltrainer/info">
@@ -56,15 +56,15 @@
               </ul>
             </div>
             <%}%>
-              <% }else{ %>
-                <div class="nav-wrapper">
-                  <a href="/" class="brand-logo"><img class="imgnav" alt="traino" src="images/logo.png"></a>
-                  <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/user/login">Iniciar Sesión</a></li>
-                    <li><a href="/user/register">Registrarse</a></li>
-                  </ul>
-                </div>
-                <% } %>
+        <% }else{ %>
+          <div class="nav-wrapper">
+            <a href="/" class="brand-logo">traino</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="/user/login">Iniciar Sesión</a></li>
+              <li><a href="/user/register">Registrarse</a></li>
+            </ul>
+          </div>
+          <% } %>
     </nav>
   </div>
 
