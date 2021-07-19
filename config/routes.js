@@ -22,10 +22,23 @@ module.exports.routes = {
   'GET /404': {view: '404'},
 
   '/': { view: 'pages/homepage' },
+
+  'GET /user/personalTrainer': 'UserController.personalTrainer',
+  'GET /user/plan': 'UserController.plan',
+  '/selectPersonalTrainer/:personalTrainerId':'UserController.addTrainer',
+
+  'GET /viewProfile/:userId': 'PersonalTrainerController.viewProfile',
+  'GET /personaltrainer/plan': 'PersonalTrainerController.plan',
+  'GET /createPlan/:userId':'PersonalTrainerController.createPlan',
+  'POST /personaltrainer/createPlan/:userId':'PersonalTrainerController.addPlan',
+  'GET /viewPlan/:userId':'PersonalTrainerController.viewPlan',
+  'GET /personaltrainer/eraseExercise/:exerciseId':'PersonalTrainerController.eraseExercise',
+
   'GET /user/login': {view: 'pages/user/login'},
   'POST /user/login': 'UserController.login',
   'GET /personaltrainer/login': {view: 'pages/personaltrainer/login'},
   'POST /personaltrainer/login': 'PersonalTrainerController.login',
+
   '/user/logout': 'UserController.logout',
   '/personaltrainer/logout': 'PersonalTrainerController.logout',
 
@@ -34,11 +47,11 @@ module.exports.routes = {
   'GET /personaltrainer/register': {view: 'pages/personaltrainer/register'},
   'POST /personaltrainer/register': 'PersonalTrainerController.register',
 
-  'GET /personaltrainer/createplan': {view: 'pages/personaltrainer/createplan'},
-  'POST /personaltrainer/createplan': {view: 'pages/personaltrainer/createplan'},
-
   'GET /personaltrainer/info': {view: 'pages/personaltrainer/info'},
   'GET /user/info': {view: 'pages/user/info'},
+
+  'GET /membership/create': 'UserController.getAllUsers',
+  'POST /membership/create': 'MembershipController.create',
 
   /***************************************************************************
   *                                                                          *

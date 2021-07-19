@@ -15,10 +15,12 @@ module.exports = {
       res.redirect('/404');
     }
   },
+
   logout: async function (req, res){
     req.session.personaltrainer = null;
     res.redirect('/');
   },
+
   register: async function (req, res){
     const name = req.param('name');
     const lastName = req.param('last_name');
@@ -37,6 +39,47 @@ module.exports = {
     } else {
       console.log("Error al crear usuario")
     }
+  },
 
+  plan: async function (req, res){
+    const personalTrainerId = req.session.personaltrainer.id;
+    const allUsers = await User.find({personalTrainer: personalTrainerId});
+    res.view('pages/personaltrainer/plan', {allUsers});
+  },
+
+  createPlan: async function (req, res){
+    const userId = req.param('userId');
+    res.view('pages/personaltrainer/createPlan', {userId});
+  },
+
+  addPlan: async function (req, res){
+    const userId = req.param('userId');
+    const descripcion = req.param('descripcion');
+    const nombreEjercicio = req.param('nombre');
+    const imagenLink = req.param('imagen');
+    const repeticiones = req.param('repeticiones');
+    const series = req.param('series');
+
+    const createdPlan = await Exercise.create({name: nombreEjercicio, description: descripcion, repetitions: repeticiones, series: series, image: imagenLink}).fetch();
+    await User.addToCollection(userId, 'exercises' ).members([createdPlan.id]);
+    res.redirect('/');
+  },
+
+  viewPlan: async function (req, res){
+    const userId = req.param('userId');
+    const allExercises = await Exercise.find({users: userId,});
+    res.view('pages/personaltrainer/viewPlan', {allExercises});
+  },
+
+  eraseExercise: async function (req, res){
+    const exerciseId = req.param('exerciseId');
+    await Exercise.destroy({id: exerciseId});
+    res.redirect('/');
+  },
+
+  viewProfile: async function (req, res){
+    const userId = req.param('userId');
+    const user = await User.findOne({id: userId,});
+    res.view('pages/personaltrainer/viewUserInfo', {user});
   },
 };

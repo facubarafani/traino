@@ -1,0 +1,16 @@
+<div class="content">
+    <ul class="collection">
+        <% for(let i of allPersonalTrainers){ %>
+            <li class="collection-item">
+                <%= i.fullName %>
+                    <% if(req.session.user.personalTrainer==i.id){ %>
+
+                        <div class="chip red white-text secondary-content">Actual</div>
+            </li>
+            <% }else{ %>
+                <a href="/selectPersonalTrainer/<%= i.id %>" class="secondary-content">Seleccionar</a>
+                <% } %>
+                    </li>
+                    <% } %>
+    </ul>
+</div>

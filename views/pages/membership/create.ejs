@@ -1,0 +1,117 @@
+<div class="row">
+  <form action="/membership/create/" method="post">
+    <div class="col s3"></div>
+    <div class="input-field col s6">
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Nueva membresia</span>
+              <div class="row">
+                <div class="col s6">
+                  <input placeholder="Fecha inicio" type="text" name="initialDate" class="datepicker">
+                </div>
+                <div class="col s6">
+                  <input placeholder="Precio" name="cost" type="number" class="validate">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s6">
+                  <input placeholder="Duración (meses)" name="duration" type="number" class="validate">
+                </div>
+                <div class="col s6">
+                  <a class="waves-effect waves-light btn-large btn modal-trigger" href="#modal1"><i
+                      class="material-icons left">search</i>asignar usuario</a>
+                </div>
+              </div>
+              <div id="userInput" class="row">
+              </div>
+              <div class="card-action">
+                <button class="btn waves-effect waves-light" type="submit">
+                  crear
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s3"></div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Asignar usuario</h4>
+    <div class="row">
+      <div class="col s2"></div>
+      <div class="col s7">
+        <input placeholder="Ingrese el nombre del usuario" id="search" type="text" class="validate">
+      </div>
+      <div class="col s1">
+        <a class="btn-floating"><i class="material-icons">search</i></a>
+      </div>
+      <div class="col s2"></div>
+    </div>
+    <ul class="collection">
+      <% for(let i of allUsers){ %>
+        <li id="user_<%= i.id %>" class="collection-item">
+          <%= i.fullName %>
+            <a onclick="selectUser(<%= i.id %>)" class="secondary-content">Seleccionar</a>
+        </li>
+        <% } %>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Confirmar</a>
+  </div>
+</div>
+
+<script>
+  var selectedUserId = null
+  var isFirstInstance = true
+
+  $(document).ready(function () {
+    $('.datepicker').datepicker();
+  });
+
+  $(document).ready(function () {
+    $('.modal').modal();
+  });
+
+  function selectUser(id) {
+    var allElements = document.getElementsByClassName("collection-item");
+    selectedUserId = id;
+    let actualElement;
+
+    for (i in allElements) {
+      actualElement = allElements.item(i);
+      let selectButton = actualElement.firstElementChild;
+      if (i == selectedUserId - 1) {
+        selectButton.textContent = "Deseleccionar";
+      } else if (i <= i--) {
+        selectButton.textContent = "Seleccionar";
+      }
+    }
+
+    var userRow = document.getElementById("userInput");
+    if (isFirstInstance) {
+      isFirstInstance = false;
+      var div = document.createElement("div");
+      div.className = "col s6";
+      var input = document.createElement("input");
+      input.id = "inputField";
+      input.readOnly = true;
+      input.value = selectedUserId;
+      input.name = "userId";
+      div.appendChild(input);
+      userRow.appendChild(div);
+    } else {
+      var userRow = document.getElementById("inputField");
+      userRow.value = selectedUserId;
+    }
+
+  };
+</script>
