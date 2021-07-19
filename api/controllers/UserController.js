@@ -23,8 +23,8 @@ module.exports = {
           await User.update({id: user.id,}).set({membership: null,});
           await Membership.destroy({user: user.id,});
         }
-        req.session.user = user;
       }
+      req.session.user = user;
       res.redirect('/');
     }else{
       req.session.user = null;
